@@ -427,7 +427,7 @@ body {
 
 .items, .items2, .items3 {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
