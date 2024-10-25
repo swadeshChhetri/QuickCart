@@ -3,11 +3,7 @@ import {featuredBrands} from './data.js';
 let items = document.querySelector('.items');
 let items2 = document.querySelector('.items2');
 let items3 = document.querySelector('.items3');
-// let HI = document.getElementById('HI');
 
-// HI.addEventListener('click',function(){
-//   alert("Button is clicked: it's mean JS is working in Shop.html");
-// })
 fetch('header.html')
 .then(response => response.text())
 .then(data => document.getElementById('header').innerHTML = data);
@@ -41,14 +37,3 @@ featuredBrands.forEach(data => {
     items3.innerHTML += ProductHTML;
   }
 });
-
-{/* <div id="poet" className="book-container">
-<img className="book-image" src={book.image} alt="book image" />
-
-<div className="company-name">{book.book}</div>
-<div className="book-name">{book.author}</div>
-<div className="price">
-  <span className="current-price">Rs {book.current_price}</span>
-  <span className="original-price">Rs {book.original_price}</span>
-  <span className="discount">({book.discount_percentage}% OFF)</span>
-</div> */}
