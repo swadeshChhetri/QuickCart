@@ -19,7 +19,11 @@ fetch('footer.html')
 featuredBrands.forEach(data => {
   const ProductHTML = `
         <div class="pro">
+      
           <img src="${data.image}" alt="${data.productName}" />
+          <div style="text-align : left">
+          4.6 ⭐ | 1308
+        </div>
           <div class="des">
             <span>${data.brand}</span>
             <h5>${data.productName}</h5>
@@ -27,6 +31,7 @@ featuredBrands.forEach(data => {
           </div>
         </div>
       </div>
+    
   `;
   if(data.categories === 'clothes'){
   items.innerHTML+= ProductHTML;
@@ -36,3 +41,14 @@ featuredBrands.forEach(data => {
     items3.innerHTML += ProductHTML;
   }
 });
+
+{/* <div id="poet" className="book-container">
+<img className="book-image" src={book.image} alt="book image" />
+
+<div className="company-name">{book.book}</div>
+<div className="book-name">{book.author}</div>
+<div className="price">
+  <span className="current-price">Rs {book.current_price}</span>
+  <span className="original-price">Rs {book.original_price}</span>
+  <span className="discount">({book.discount_percentage}% OFF)</span>
+</div> */}
