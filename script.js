@@ -1,19 +1,3 @@
-// const bar = document.getElementById('bar');
-// const close = document.getElementById('close');
-// const nav = document.getElementById('navbar');
-
-// if(bar){
-//   bar.addEventListener('click',() => { 
-//     nav.classList.add('active');
-//    })
-// }
-
-// if(close){
-//   close.addEventListener('click', () => { 
-//     nav.classList.remove('active');
-//    })
-// }
-
 import {featuredBrands} from './data.js';
 
 let items = document.querySelector('.items');
@@ -24,6 +8,14 @@ let items3 = document.querySelector('.items3');
 // HI.addEventListener('click',function(){
 //   alert("Button is clicked: it's mean JS is working in Shop.html");
 // })
+fetch('header.html')
+.then(response => response.text())
+.then(data => document.getElementById('header').innerHTML = data);
+
+fetch('footer.html')
+.then(response => response.text())
+.then(data => document.getElementById('footer').innerHTML = data);
+
 featuredBrands.forEach(data => {
   const ProductHTML = `
         <div class="pro">
