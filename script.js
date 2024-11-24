@@ -2,19 +2,21 @@ let bagItems;
 
 const initApp = async () => {
   try {
-    const headerResponse = await fetch("https://swadeshchhetri.github.io/components/header.html");
+    const headerResponse = await fetch(
+      "https://swadeshchhetri.github.io/components/header.html"
+    );
     if (!headerResponse.ok) throw new Error("Failed to load header");
     const headerData = await headerResponse.text();
     document.getElementById("header").innerHTML = headerData;
 
-
-    const footerResponse = await fetch("https://swadeshchhetri.github.io/components/footer.html");
+    const footerResponse = await fetch(
+      "https://swadeshchhetri.github.io/components/footer.html"
+    );
     if (!footerResponse.ok) throw new Error("Failed to load footer");
     const footerData = await footerResponse.text();
     document.getElementById("footer").innerHTML = footerData;
-    
 
-    let bagItemsStr = localStorage.getItem('bagItems');
+    let bagItemsStr = localStorage.getItem("bagItems");
     bagItems = bagItemsStr ? JSON.parse(bagItemsStr) : [];
   } catch (error) {
     console.error("Error loading components:", error);
@@ -22,47 +24,48 @@ const initApp = async () => {
 };
 
 (async () => {
- await initApp();
+  await initApp();
   onLoad();
   dropdown();
   search();
   displayItemsOnHomePage();
   displayBagIcon();
-
 })();
 
+function onLoad() {}
 
-function onLoad() {
-}
-
-function dropdown(){
+function dropdown() {
   const dropdownBtns = document.querySelectorAll(".dropdownBtn");
   const dropdownContents = document.querySelectorAll(".dropdownContent");
   dropdownBtns.forEach((btn, index) => {
-  btn.addEventListener("click", function () {
-    dropdownContents[index].classList.toggle("show");
+    btn.addEventListener("click", function () {
+      dropdownContents[index].classList.toggle("show");
+    });
   });
-})};
+}
 
-function search(){
+function search() {
   document.getElementById("search").addEventListener("click", () => {
-    let searchInput = document.getElementById("search-input").value.toLowerCase();
+    let searchInput = document
+      .getElementById("search-input")
+      .value.toLowerCase();
     const filteredProducts = items.filter((item) =>
       item.productName.toLowerCase().includes(searchInput)
     );
     localStorage.setItem("filteredProducts", JSON.stringify(filteredProducts));
-    window.location.href = "https://swadeshchhetri.github.io/components/searchResults.html";
+    window.location.href =
+      "https://swadeshchhetri.github.io/components/searchResults.html";
   });
-};
+}
 
-function displayItemsOnHomePage(){
-
-  let itemsContainerElement = document.querySelector('.pro-container');
+function displayItemsOnHomePage() {
+  let itemsContainerElement = document.querySelector(".pro-container");
   if (!itemsContainerElement) {
     return;
   }
   let innerHTML = "";
   // let product = document.createElement("div");
+  console.log(items);
   items.forEach((item) => {
     innerHTML += `   
       <div class='pro'>
@@ -87,23 +90,23 @@ function displayItemsOnHomePage(){
 
 function addToBag(itemId) {
   // ... existing code for adding item to bagItems and updating local storage
- bagItems.push(itemId);
-  localStorage.setItem('bagItems', JSON.stringify(bagItems));
+  bagItems.push(itemId);
+  localStorage.setItem("bagItems", JSON.stringify(bagItems));
   displayBagIcon();
 }
 
 function displayBagIcon() {
   if (bagItems) {
-    let bagItemCountElement = document.querySelector('.me');
+    let bagItemCountElement = document.querySelector(".me");
     if (!bagItemCountElement) {
       console.error("Cart icon element not found.");
       return;
     }
     if (bagItems.length > 0) {
-      bagItemCountElement.style.visibility = 'visible';
+      bagItemCountElement.style.visibility = "visible";
       bagItemCountElement.innerText = bagItems.length;
     } else {
-      bagItemCountElement.style.visibility = 'hidden';
+      bagItemCountElement.style.visibility = "hidden";
     }
   }
 }
