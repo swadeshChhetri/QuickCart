@@ -8,7 +8,7 @@ const items = [
     current_price: 299,
     original_price: 1899,
     original_percentage: 84,
-    image: "/images/1.jpg" ,
+    image: "images/1.jpg" ,
     rating: 5,
   },
   {
@@ -20,7 +20,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/2.jpg",
+    image: "images/2.jpg",
     rating: 4.5,
   },
   {
@@ -32,7 +32,7 @@ const items = [
     current_price: 299,
     original_price: 999,
     original_percentage: 70,
-    image: "/images/3.jpg",
+    image: "images/3.jpg",
     rating: 4.1,
   },
   {
@@ -44,7 +44,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/4.jpg",
+    image: "images/4.jpg",
     rating: 4,
   },
   {
@@ -56,7 +56,7 @@ const items = [
   current_price: 120,
   original_price: 100,
   original_percentage: 20,
-  image: "/images/5.jpg",
+  image: "images/5.jpg",
   rating: 5,
 
   },
@@ -69,7 +69,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/6.jpg",
+    image: "images/6.jpg",
     rating: 5,
   },
   {
@@ -81,7 +81,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/7.jpg",
+    image: "images/7.jpg",
     rating: 4,
   },
   {
@@ -93,7 +93,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/8.jpg",
+    image: "images/8.jpg",
     rating: 5,
   },
   {
@@ -105,7 +105,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/9.jpg",
+    image: "images/9.jpg",
     rating: 4,
   },
   {
@@ -117,7 +117,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/10.jpg",
+    image: "images/10.jpg",
     rating: 5,
   },
   {
@@ -129,7 +129,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/11.jpg",
+    image: "images/11.jpg",
     rating: 4,
   },
   {
@@ -141,7 +141,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/12.jpg",
+    image: "images/12.jpg",
     rating: 5,
   },
   {
@@ -153,7 +153,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/13.jpg",
+    image: "images/13.jpg",
     rating: 5,
   },
   {
@@ -165,7 +165,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/14.jpg",
+    image: "images/14.jpg",
     rating: 4,
   },
   {
@@ -177,7 +177,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/15.jpg",
+    image: "images/15.jpg",
     rating: 5,
   },
   {
@@ -189,7 +189,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/16.jpg",
+    image: "images/16.jpg",
     rating: 4,
   },
   {
@@ -201,7 +201,7 @@ const items = [
   current_price: 120,
   original_price: 100,
   original_percentage: 20,
-  image: "/images/17.jpg",
+  image: "images/17.jpg",
   rating: 5,
 
   },
@@ -214,7 +214,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/18.jpg",
+    image: "images/18.jpg",
     rating: 5,
   },
   {
@@ -226,7 +226,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/19.jpg",
+    image: "images/19.jpg",
     rating: 4,
   },
   {
@@ -238,7 +238,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/20.jpg",
+    image: "images/20.jpg",
     rating: 5,
   },
   {
@@ -250,7 +250,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/21.jpg",
+    image: "images/21.jpg",
     rating: 4,
   },
   {
@@ -262,7 +262,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/22.jpg",
+    image: "images/22.jpg",
     rating: 5,
   },
   {
@@ -274,7 +274,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/23.jpg",
+    image: "images/23.jpg",
     rating: 4,
   },
   {
@@ -286,7 +286,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/24.jpg",
+    image: "images/24.jpg",
     rating: 5,
   },
   {
@@ -298,7 +298,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/26.jpg",
+    image: "images/26.jpg",
     rating: 4,
   },
   {
@@ -310,7 +310,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/27.jpg",
+    image: "images/27.jpg",
     rating: 5,
   },
   {
@@ -322,7 +322,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/28.jpg",
+    image: "images/28.jpg",
     rating: 4,
   },
   {
@@ -334,7 +334,7 @@ const items = [
   current_price: 120,
   original_price: 100,
   original_percentage: 20,
-  image: "/images/29.jpg",
+  image: "images/29.jpg",
   rating: 5,
 
   },
@@ -347,7 +347,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/30.jpg",
+    image: "images/30.jpg",
     rating: 5,
   },
   {
@@ -359,7 +359,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/31.jpg",
+    image: "images/31.jpg",
     rating: 4,
   },
   {
@@ -371,7 +371,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/32.jpg",
+    image: "images/32.jpg",
     rating: 5,
   },
   {
@@ -383,7 +383,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/33.jpg",
+    image: "images/33.jpg",
     rating: 4,
   },
   {
@@ -395,7 +395,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/34.jpg",
+    image: "images/34.jpg",
     rating: 5,
   },
   {
@@ -407,7 +407,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/35.jpg",
+    image: "images/35.jpg",
     rating: 4,
   },
   {
@@ -419,7 +419,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/36.jpg",
+    image: "images/36.jpg",
     rating: 5,
   },
   {
@@ -431,7 +431,7 @@ const items = [
     current_price: 120,
     original_price: 100,
     original_percentage: 20,
-    image: "/images/37.jpg",
+    image: "images/37.jpg",
     rating: 5,
   },
 ];
