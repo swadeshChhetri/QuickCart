@@ -2,11 +2,15 @@
 const CONVENIENCE_FEES = 99;
 let bagItemObjects;
 
-    let bagItemsStr = localStorage.getItem('bagItems');
-    bagItems = bagItemsStr ? JSON.parse(bagItemsStr) : [];
-
+function onLoad() {
     loadBagItemObjects();
     displayBagItems();
+}
+
+    let bagItemsStr = localStorage.getItem('bagItems');
+    bagItems = bagItemsStr ? JSON.parse(bagItemsStr) : [];
+    
+
 
 
 function loadBagItemObjects() {
@@ -17,6 +21,7 @@ function loadBagItemObjects() {
 
 function displayBagItems() {
     const containerElement = document.querySelector('.bag-items-container');
+    console.log(containerElement);
     let innerHTML = '';
 
     bagItemObjects.forEach(item => {
@@ -25,6 +30,7 @@ function displayBagItems() {
 
     containerElement.innerHTML = innerHTML;
 }
+
 
 function generateItemHTML(item) {
     return `

@@ -3,14 +3,14 @@ let bagItems;
 const initApp = async () => {
   try {
     const headerResponse = await fetch(
-      "https://swadeshchhetri.github.io/components/header.html"
+      "/components/header.html"
     );
     if (!headerResponse.ok) throw new Error("Failed to load header");
     const headerData = await headerResponse.text();
     document.getElementById("header").innerHTML = headerData;
 
     const footerResponse = await fetch(
-      "https://swadeshchhetri.github.io/components/footer.html"
+      "/components/footer.html"
     );
     if (!footerResponse.ok) throw new Error("Failed to load footer");
     const footerData = await footerResponse.text();
@@ -54,7 +54,7 @@ function search() {
     );
     localStorage.setItem("filteredProducts", JSON.stringify(filteredProducts));
     window.location.href =
-      "https://swadeshchhetri.github.io/components/searchResults.html";
+      "/components/searchResults.html";
   });
 }
 
@@ -65,8 +65,7 @@ function displayItemsOnHomePage() {
   }
   let innerHTML = "";
   // let product = document.createElement("div");
-  console.log(items);
-  items.forEach((item) => {
+ items.forEach((item) => {
     innerHTML += `   
       <div class='pro'>
         <img src="${item.image}" alt="${item.productName}" />
