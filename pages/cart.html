@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E_Website</title>
+    <link rel="stylesheet" href="../styles/cart.css" />
+    <link rel="stylesheet" href="../style.css">
+    <link 
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  </head>
+
+  <body>
+    <section id="header">
+      <div class="img_container">
+        <img src="/images/logo.png" alt="" class="image">
+      </div>
+
+      <div class="dropdown">
+        <button class="dropdownBtn">Menu</button>
+        <div class="dropdownContent">
+          <a href="/index.html">Home</a>
+          <a href="./shop.html">Shop</a>
+          <a href="./blog.html">Blog</a>
+          <a href="./about.html">About</a>
+          <a href="./contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div class="search_bar">
+        <!-- class="search_input"   -->
+        <div style="padding: 5px 15%">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Search by Title, Author, or ISBN"
+          />
+        </div>
+      </div>
+      <span class="button-container">
+        <button class="green-button" id="search">Search</button>
+      </span>
+      <!-- onkeyup="search()"  - -->
+      <div class="action_bar">
+        <div class="drop_container">
+          <div class="dropdown">
+            <button class="dropdownBtn">Sing In</button>
+            <div class="dropdownContent">
+              <a href="./singup.html">Create Account</a>
+              <a href="./Login.html">Log In</a>
+              <a href="create_account.html">Order Status</a>
+              <hr />
+              <a href="./wishlist.html">My Wishlist</a>
+              <a href="../pages/profile.html">My Account</a>
+              <a href="my_account.html">Logout</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdownBtn">Country</button>
+            <div class="dropdownContent">
+              <a value="">India</a>
+              <a value="">United State</a>
+              <a value="">Australia</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a href="/pages/cart.html">
+          <i class="fa-solid fa-cart-shopping"><span class="me">0</span></i></a
+        >
+      </div>
+      <div>
+        <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+      </div>
+    </section>
+    <!-- <section id="page-header" class="about-header">
+      <h2>#KnowUs</h2>
+
+      <p>Lorem ipsum dolor sit amet consectetur.</p>
+    </section> -->
+
+    <section id="cart" class="section-p1 ">
+      <!-- <section class=""> -->
+        <table width="100%">
+          <thead>
+            <tr>
+              <td>Product</td>
+              <td>Product Name</td>
+              <td>Price</td>
+              <td>Quantity</td>
+              <td>Remove</td>
+            </tr>
+          </thead>
+          <tbody class="bag-items-container">
+
+          </tbody>
+          </table>
+      <!-- </section> -->
+    </section>
+
+
+    <footer id="footer"></footer>
+
+    <script src="/data/data.js"></script>
+    <script src="../script.js"></script>
+    <script src="/JS/cart.js"></script>
+  </body>
+</html>
