@@ -3,14 +3,14 @@ let bagItems;
 const initApp = async () => {
   try {
     const headerResponse = await fetch(
-      "/components/header.html"
+      "components/header.html"
     );
     if (!headerResponse.ok) throw new Error("Failed to load header");
     const headerData = await headerResponse.text();
     document.getElementById("header").innerHTML = headerData;
 
     const footerResponse = await fetch(
-      "/components/footer.html"
+      "components/footer.html"
     );
     if (!footerResponse.ok) throw new Error("Failed to load footer");
     const footerData = await footerResponse.text();
