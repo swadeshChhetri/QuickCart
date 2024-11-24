@@ -2,13 +2,13 @@ let bagItems;
 
 const initApp = async () => {
   try {
-    const headerResponse = await fetch("/components/header.html");
+    const headerResponse = await fetch("https://swadeshchhetri.github.io/components/header.html");
     if (!headerResponse.ok) throw new Error("Failed to load header");
     const headerData = await headerResponse.text();
     document.getElementById("header").innerHTML = headerData;
 
 
-    const footerResponse = await fetch("/components/footer.html");
+    const footerResponse = await fetch("https://swadeshchhetri.github.io/components/footer.html");
     if (!footerResponse.ok) throw new Error("Failed to load footer");
     const footerData = await footerResponse.text();
     document.getElementById("footer").innerHTML = footerData;
@@ -51,7 +51,7 @@ function search(){
       item.productName.toLowerCase().includes(searchInput)
     );
     localStorage.setItem("filteredProducts", JSON.stringify(filteredProducts));
-    window.location.href = "/components/searchResults.html";
+    window.location.href = "https://swadeshchhetri.github.io/components/searchResults.html";
   });
 };
 
