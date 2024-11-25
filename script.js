@@ -107,9 +107,4 @@ function displayBagIcon() {
     } else {
       bagItemCountElement.style.visibility = "hidden";
     }
-  }
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> 2b806a956ee0169c30ec79aad507308980840a7e
+  }}
