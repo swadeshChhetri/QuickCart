@@ -22,4 +22,8 @@ To run this project locally:
 ```bash
 git clone https://github.com/yourusername/quickcart.git
 cd quickcart
+<<<<<<< HEAD
 open index.html
+=======
+open index.html
+>>>>>>> 2b806a956ee0169c30ec79aad507308980840a7e
