@@ -35,7 +35,7 @@ function displayBagItems() {
 function generateItemHTML(item) {
     return `
         <tr>
-            <td><img src="../${item.image}" alt="" /></td>
+            <td><img src="${item.image}" alt="" /></td>
             <td>${item.productName}</td>
             <td>₹${item.current_price}</td>
             <td><input type="number" value="1" /></td>
