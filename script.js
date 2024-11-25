@@ -54,7 +54,7 @@ function search() {
     );
     localStorage.setItem("filteredProducts", JSON.stringify(filteredProducts));
     window.location.href =
-      "/components/searchResults.html";
+      "components/searchResults.html";
   });
 }
 
