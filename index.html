@@ -1,110 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- <base href="/QuickCart/"> -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/tittle-logo.png" type="image/x-icon" />
     <title>QuickCart</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/slider.css" />
+    <link rel="stylesheet" href="styles/product-details.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
+    <!-- Header -->
     <section id="header"></section>
-   
-<!-- 
-    <div id="mobile"> -->
-      <!-- <a href="cart.html"><i class="far fa-shopping-bag"></i></a> -->
-      <!-- <i class="fa-solid fa-bars"></i> -->
-    <!-- </div> -->
 
-    <section id="hero">
-      <h5>Trade-in-offer</h5>
-      <h2>Save Up to 65% Off!</h2>
-      <h3>Unlock incredible savings with our special coupons</h3>
-      <p>—enjoy discounts of up to 65% on your favorite items!</p>
-      <button>Shop Now</button>
-    </section>
+    <div id="mobile">
+      <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+      <i class="fa-solid fa-bars"></i>
+    </div>
 
+    <!-- Banner-Sliding -->
+    <div class="slide-container">
+      <div class="slides">
+        <img src="images/banners/banner-1.jpg" class="active" />
+        <img src="images/banners/banner-2.jpg" />
+        <img src="images/banners/banner-3.jpg" />
+        <img src="images/banners/banner-2.jpg" />
+        <img src="images/hero2.jpg" />
+      </div>
+
+      <div class="buttons">
+        <span class="next">&#10095;</span>
+        <span class="prev">&#10094;</span>
+      </div>
+
+      <div class="dotsContainer">
+        <div class="dot active" attr="0" onclick="switchImage(this)"></div>
+        <div class="dot" attr="1" onclick="switchImage(this)"></div>
+        <div class="dot" attr="2" onclick="switchImage(this)"></div>
+        <div class="dot" attr="3" onclick="switchImage(this)"></div>
+        <div class="dot" attr="4" onclick="switchImage(this)"></div>
+      </div>
+    </div>
+
+    <!-- Features-Sections -->
     <section id="feature" class="section-p1">
       <div class="fe-box">
-        <img src="img/FreeShipping.jpg" alt="" />
+        <img src="images/FreeShipping.jpg" alt="" />
         <h6>Free Shipping</h6>
       </div>
       <div class="fe-box">
-        <img src="img/OnlineOrder.jpg" alt="" />
+        <img src="images/OnlineOrder.jpg" alt="" />
         <h6>Online Order</h6>
       </div>
       <div class="fe-box">
-        <img src="img/SaveMoney.jpg" alt="" />
+        <img src=" images/SaveMoney.jpg" alt="" />
         <h6>Save Money</h6>
       </div>
       <div class="fe-box">
-        <img src="img/Promotion.jpg" alt="" />
+        <img src="images/Promotion.jpg" alt="" />
         <h6>Promotion</h6>
       </div>
       <div class="fe-box">
-        <img src="img/24-7.png" alt="" />
+        <img src="images/24-7.png" alt="" />
         <h6>24/7 Support</h6>
       </div>
     </section>
 
+    <!-- Product-Sections -->
     <section id="product1" class="section-p1">
-      <h2>Threads & Trends</h2>
-      <p>Bringing the latest fashion trends to life</p>
+      <h3 class="title">Threads & Trends</h3>
+      <!-- <p>Bringing the latest fashion trends to life</p> -->
       <div class="items pro-container"></div>
     </section>
 
-    <section id="banner" class="section-m1">
-      <h4>Special Offers</h4>
-      <h2>Up to <span>65%% off</span> T-shirts & Accessories!</h2>
-      <button class="normal">Explore More</button>
-    </section>
-
-    <section id="sm-banner" class="section-p1">
-      <div class="banner-box">
-        <h4>Crazy deals</h4>
-        <h2>buy 1 get 1 free</h2>
-        <span>The best classic dress is on sale at QuickCart</span>
-        <button class="white">Learn More</button>
-      </div>
-      <div class="banner-box banner-box2">
-        <h4>spring/summar</h4>
-        <h2>upcoming season</h2>
-        <span>The best classic dress is on sale at QuickCart</span>
-        <button class="white">Collection</button>
-      </div>
-    </section>
-
-    <section id="product1" class="section-p1">
-      <h2>Beauty & grooming</h2>
-      <p>Elevate your routine with the finest beauty and grooming essentials</p>
-      <div class="items2 pro-container"></div>
-    </section>
-
-    <section id="banner3">
-      <div class="banner-box">
-        <h2>SEASONAL SALE</h2>
-        <h3>Product Collection -50% OFF</h3>
-      </div>
-      <div class="banner-box banner-box2">
-        <h2>SEASONAL SALE</h2>
-        <h3>Product Collection -50% OFF</h3>
-      </div>
-      <div class="banner-box banner-box3">
-        <h2>SEASONAL SALE</h2>
-        <h3>Product Collection -50% OFF</h3>
-      </div>
-    </section>
-
-    <section id="product1" class="section-p1">
-      <h2>Best of Electronics</h2>
-      <p>
-        Discover cutting-edge electronics designed to simplify and enhance your
-        life
-      </p>
-      <div class="items3 pro-container"></div>
-    </section>
-
+    <!-- Newsletters -->
     <section id="newsletter" class="section-p1 section-m1">
       <div class="newstext">
         <h4>Sign Up For Newsletters</h4>
@@ -118,10 +92,15 @@
         <button class="normal">Sing Up</button>
       </div>
     </section>
+
+    <!-- Footer -->
     <footer id="footer"></footer>
 
-    
-
-    <script type="module" src="script.js"></script>
+    <!-- Scripts -->
+    <script src="data/data.js"></script>
+    <script src="JS/cart.js"></script>
+    <script src="JS/slider.js"></script>
+    <script src="JS/product-details.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

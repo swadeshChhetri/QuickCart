@@ -1,39 +1,111 @@
-import {featuredBrands} from './data.js';
+let bagItems;
 
-let items = document.querySelector('.items');
-let items2 = document.querySelector('.items2');
-let items3 = document.querySelector('.items3');
+const initApp = async () => {
+  try {
+    const headerResponse = await fetch(
+      "components/header.html"
+    );
+    if (!headerResponse.ok) throw new Error("Failed to load header");
+    const headerData = await headerResponse.text();
+    document.getElementById("header").innerHTML = headerData;
 
-fetch('header.html')
-.then(response => response.text())
-.then(data => document.getElementById('header').innerHTML = data);
+    const footerResponse = await fetch(
+      "components/footer.html"
+    );
+    if (!footerResponse.ok) throw new Error("Failed to load footer");
+    const footerData = await footerResponse.text();
+    document.getElementById("footer").innerHTML = footerData;
 
-fetch('footer.html')
-.then(response => response.text())
-.then(data => document.getElementById('footer').innerHTML = data);
-
-featuredBrands.forEach(data => {
-  const ProductHTML = `
-        <div class="pro">
-      
-          <img src="${data.image}" alt="${data.productName}" />
-          <div style="text-align : left">
-          4.6 ⭐ | 1308
-        </div>
-          <div class="des">
-            <span>${data.brand}</span>
-            <h5>${data.productName}</h5>
-            <h4>₹${data.price}</h4>
-          </div>
-        </div>
-      </div>
-    
-  `;
-  if(data.categories === 'clothes'){
-  items.innerHTML+= ProductHTML;
-  }else if( data.categories === 'beauty'){
-   items2.innerHTML+= ProductHTML;
-  }else if( data.categories === 'gadgets'){
-    items3.innerHTML += ProductHTML;
+    let bagItemsStr = localStorage.getItem("bagItems");
+    bagItems = bagItemsStr ? JSON.parse(bagItemsStr) : [];
+  } catch (error) {
+    console.error("Error loading components:", error);
   }
-});
+};
+
+(async () => {
+  await initApp();
+  onLoad();
+  dropdown();
+  search();
+  displayItemsOnHomePage();
+  displayBagIcon();
+})();
+
+function onLoad() {}
+
+function dropdown() {
+  const dropdownBtns = document.querySelectorAll(".dropdownBtn");
+  const dropdownContents = document.querySelectorAll(".dropdownContent");
+  dropdownBtns.forEach((btn, index) => {
+    btn.addEventListener("click", function () {
+      dropdownContents[index].classList.toggle("show");
+    });
+  });
+}
+
+function search() {
+  document.getElementById("search").addEventListener("click", () => {
+    let searchInput = document
+      .getElementById("search-input")
+      .value.toLowerCase();
+    const filteredProducts = items.filter((item) =>
+      item.productName.toLowerCase().includes(searchInput)
+    );
+    localStorage.setItem("filteredProducts", JSON.stringify(filteredProducts));
+    window.location.href =
+      "components/searchResults.html";
+  });
+}
+
+function displayItemsOnHomePage() {
+  let itemsContainerElement = document.querySelector(".pro-container");
+  if (!itemsContainerElement) {
+    return;
+  }
+  let innerHTML = "";
+  // let product = document.createElement("div");
+ items.forEach((item) => {
+    innerHTML += `   
+      <div class='pro'>
+        <img src="${item.image}" alt="${item.productName}" />
+        <div>${item.rating} ⭐ | ${item.reviews}</div>
+        <div class="des">
+          <span>${item.brand}</span>
+          <h5><a href="/pages/product-details.html">${item.productName}</a></h5>
+        </div>
+        <div class="price">
+          <span><strong>${item.original_percentage}%OFF</strong></span>
+          <span>${item.original_price}</span>
+          <span>₹${item.current_price}</span>
+        </div>
+        <div style="text-align:center">
+          <button class="addCart" onclick="addToBag(${item.id})">Add to Cart</button>
+        </div>
+      </div>`;
+  });
+  itemsContainerElement.innerHTML = innerHTML;
+}
+
+function addToBag(itemId) {
+  // ... existing code for adding item to bagItems and updating local storage
+  bagItems.push(itemId);
+  localStorage.setItem("bagItems", JSON.stringify(bagItems));
+  displayBagIcon();
+}
+
+function displayBagIcon() {
+  if (bagItems) {
+    let bagItemCountElement = document.querySelector(".me");
+    if (!bagItemCountElement) {
+      console.error("Cart icon element not found.");
+      return;
+    }
+    if (bagItems.length > 0) {
+      bagItemCountElement.style.visibility = "visible";
+      bagItemCountElement.innerText = bagItems.length;
+    } else {
+      bagItemCountElement.style.visibility = "hidden";
+    }
+  }
+}
