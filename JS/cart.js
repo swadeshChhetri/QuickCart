@@ -40,7 +40,9 @@ function generateItemHTML(item) {
             <td>₹${item.current_price}</td>
             <td><input type="number" value="1" /></td>
             <td>
-                <div class="remove-from-cart" onclick="removeFromBag(${item.id})"><i class="far fa-times-circle"></i></div>
+                <div class="remove-from-cart" onclick="removeFromBag(${item.id})">
+                    <i class="far fa-times-circle"></i>
+                </div>
             </td>
         </tr>
     `;
