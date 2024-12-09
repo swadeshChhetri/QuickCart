@@ -25,7 +25,10 @@
 
 
 
-
+!How did you render the header & footer on other pages?
+Step1:  Create a container with id & linked the js file;
+Step2: Use an asychronous function to fetch the html page & set the codition ;
+Step3: await for data and convert it into a text and set the data to the html container;
 
 
 
