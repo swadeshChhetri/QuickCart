@@ -96,7 +96,7 @@ function addToBag(itemId) {
 
 function displayBagIcon() {
   if (bagItems) {
-    let bagItemCountElement = document.querySelector(".me");
+    let bagItemCountElement = document.querySelector(".cart_count");
     if (!bagItemCountElement) {
       console.error("Cart icon element not found.");
       return;
