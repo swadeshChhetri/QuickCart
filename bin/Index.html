@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover Popup (HTML + CSS)</title>
+  <style>
+    /* General styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+
+    .hover-element {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      position: relative; /* For positioning the popup */
+    }
+
+    .popup {
+      display: none; /* Initially hidden */
+      position: absolute;
+      top: 100%; /* Below the element */
+      left: 0;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 200px;
+      z-index: 1000;
+    }
+
+    .popup a {
+      display: block;
+      color: #007bff;
+      text-decoration: none;
+      padding: 5px 0;
+    }
+
+    .popup a:hover {
+      text-decoration: underline;
+    }
+
+    /* Show popup on hover */
+    .hover-element:hover .popup {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="hover-element">
+  Hover me
+  <div class="popup">
+    <a href="#link1">Link 1</a>
+    <a href="#link2">Link 2</a>
+    <a href="#link3">Link 3</a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,64 +1,56 @@
+<section class="header">
+
+  <button id="open-sidebar-button">
+    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#c9c9c9"><path d="M165.13-254.62q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.86q7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.87q-7.22 7.12-17.9 7.12H165.13Zm0-200.25q-10.68 0-17.9-7.27-7.23-7.26-7.23-17.99 0-10.74 7.23-17.87 7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.27 7.23 7.26 7.23 17.99 0 10.74-7.23 17.87-7.22 7.13-17.9 7.13H165.13Zm0-200.26q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.87q7.22-7.12 17.9-7.12h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.86q-7.22 7.13-17.9 7.13H165.13Z"/></svg>
+  </button> 
+
 <div class="img_container">
   <img class="image" src="images/logo.png" alt="" />
 </div>
 
 <div class="dropdown">
-  <button class="dropdownBtn">Menu</button>
-  <div class="dropdownContent">
-    <a href="index.html">Home</a>
-    <a href="pages/shop.html">Shop</a>
-    <a href="pages/about.html">About</a>
-    <a href="pages/contact.html">Contact</a>
-  </div>
+  <nav class="hover-element">
+    Menu
+    <ul class="popup1">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pages/shop.html">Shop</a></li>
+    </ul>
+  </nav>
 </div>
 
 <div class="search_bar">
   <!-- class="search_input"   -->
-  <div style="padding: 5px 15%">
-    
+  <div style="padding: 2px 15%">
     <input
       type="search"
       id="search-input"
-      placeholder="Search by Title, Author, or ISBN"
+      placeholder="Search by Product name"
     />
     <i id="search" class="fa-solid fa-magnifying-glass"></i>
   </div>
 </div>
-<span class="button-container">
-  <!-- <button class="search-button" id="search">Search</button> -->
-</span>
-<!-- onkeyup="search()"  - -->
-<div class="action_bar">
-  <div class="drop_container">
-    <div class="dropdown">
-      <button class="dropdownBtn">Sing In</button>
-      <div class="dropdownContent">
-        <a href="pages/singup.html">Create Account</a>
-        <a href="pages/Login.html">Log In</a>
-        <a href="pages/create_account.html">Order Status</a>
-        <hr>
-        <a href="pages/wishlist.html">My Wishlist</a>
-        <a href="pages/profile.html">My Account</a>
-        <a href="pages/my_account.html">Logout</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropdownBtn">Country</button>
-      <div class="dropdownContent">
-        <a value="">India</a>
-        <a value="">United State</a>
-        <a value="">Australia</a>
-      </div>
-    </div>
+<div style="display: flex; gap: 3rem; width: 15%; align-items: center;" class="button-container">
+  <div class="dropdown">
+    <nav class="hover-element">
+      <button id="shakeButton" class="login-button">Login</button>
+       <ul class="popup1"> 
+        <li><a href="pages/singup.html">Create Account</a></li>
+        <li><a href="pages/Login.html">Log In</a></li>
+        <li><a href="pages/create_account.html">Order Status</a></li>
+        <hr />
+        <li><a href="pages/wishlist.html">My Wishlist</a></li>
+        <li><a href="pages/profile.html">My Account</a></li>
+        <li><a href="pages/my_account.html">Logout</a></li> 
+       </ul> 
+    </nav>
+  </div>
+  <div class="cart_container">
+    <a href="pages/cart.html">
+      <i class="fa fa-shopping-cart"></i>
+      <span class="cart_count">0</span>
+    </a>
   </div>
 </div>
+</section>
 
-<div class="cart_container" >
-  <a href="pages/cart.html">
-    <i class="fa fa-shopping-cart"></i>
-   <span class="cart_count">0</span>
-  </a>
-</div>
-<div>
-  <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
-</div>
+

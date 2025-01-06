@@ -7,24 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="styles/header.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
 </head>
 <body>
   <header id="header"></header>
-  <section class="product1">
-  <div id="products" class="items "></div>
-</section>
+  <section class="product1 section-p1" >
+    <div id="products" class="items pro-container"></div>
+  </section>
+  <footer id="footer"></footer>
 <script>
-// Retrieve and parse the filtered data
 const filteredProducts = JSON.parse(localStorage.getItem("filteredProducts"));
-
-// Function to display products
 const displayProducts = (products) => {
   const productsContainer = document.getElementById("products");
   let innerHTML = "";
   products.forEach((item) => {
     innerHTML += `   
-      <div id='product1' class='section p-1'>
         <div class='pro'>
         <img src="${item.image}" alt="${item.productName}" />
         <div>4.6 ⭐ | 1308</div>
@@ -40,38 +40,17 @@ const displayProducts = (products) => {
         <div style="text-align:center">
           <button class="addCart" onclick="addToBag(${item.id})">Add to Cart</button>
         </div>
-        </div>
       </div>`;
   });
   productsContainer.innerHTML = innerHTML;
-  //   const card = document.createElement("div");
-  //   card.classList.add("pro");
-
-  //   // const imgContainer = document.createElement("div");
-  //   // imgContainer.classList.add("image-container");
-  //   const image = document.createElement("img");
-  //   image.src = item.image;
-  //   card.appendChild(image);
-
-  //   const name = document.createElement("h5");
-  //   name.classList.add("product-name");
-  //   name.innerText = item.productName;
-
-  //   const price = document.createElement("h6");
-  //   price.innerText = "₹" + item.price;
-
-  //   // card.appendChild(imgContainer);
-  //   card.appendChild(name);
-  //   card.appendChild(price);
-  //   productsContainer.appendChild(card);
   };
 
-// Display the filtered products on the new page
-if (filteredProducts) {
+if (filteredProducts && filteredProducts.length > 0) {
   displayProducts(filteredProducts);
 } else {
   document.getElementById("products").innerText = "No products found";
 }
+
 </script>
 <script src="script.js"></script>
 </body>

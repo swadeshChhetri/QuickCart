@@ -22,52 +22,38 @@ const initApp = async () => {
 (async () => {
   await initApp();
   search();
-  shake();
   displayItemsOnHomePage();
   displayBagIcon();
-  mobileMenu();
+  // mobileMenu();
   popupContent();
 })();
 
-function mobileMenu() {
-  const openButton = document.getElementById("open-sidebar-button");
-  const navbar = document.getElementById("navbar");
-  const closed = document.getElementById("close-sidebar-button");
+// function mobileMenu() {
+//   const openButton = document.getElementById("open-sidebar-button");
+//   const navbar = document.getElementById("navbar");
+//   const closeButton = document.getElementById("close-sidebar-button");
 
-  openButton.addEventListener("click", () => {
-    navbar.classList.add("show");
-  });
+//   openButton.addEventListener("click", () => {
+//     navbar.classList.toggle("show");
+//   });
 
-  closed.addEventListener("click", () => {
-    navbar.classList.remove("show");
-  });
-};
+//   closeButton.addEventListener("click", () => {
+//     navbar.classList.remove("show");
+//   });
+// }
 
 function search() {
   document.getElementById("search").addEventListener("click", () => {
-    let searchInput = document.getElementById("search-input").value.toLowerCase();
+    let searchInput = document
+      .getElementById("search-input")
+      .value.toLowerCase();
     const filteredProducts = items.filter((item) =>
       item.productName.toLowerCase().includes(searchInput)
     );
     localStorage.setItem("filteredProducts", JSON.stringify(filteredProducts));
     window.location.href = "components/searchResults.html";
   });
-};
-
-function shake(){
-  const button = document.getElementById("shakeButton");
-
-  const triggerShake = () => {
-    button.classList.add("shake");
-    setTimeout(() => {
-      button.classList.remove("shake");
-    }, 500); // Match the duration of the animation
-  };
-
-  // Trigger the shake animation every 3 seconds
-  setInterval(triggerShake, 3000);
-};
-
+}
 
 function displayItemsOnHomePage() {
   let itemsContainerElement = document.querySelector(".pro-container");
@@ -77,10 +63,8 @@ function displayItemsOnHomePage() {
   let innerHTML = "";
   items.forEach((item) => {
     innerHTML += `   
-      <div class='pro'>
-      <div data-id="${item.id}" class="imageContainer">
-        <img  src="${item.image}" alt="${item.productName}" />
-      </div>
+      <div class='pro' data-id="${item.id}">
+        <img src="${item.image}" alt="${item.productName}" />
         <div>${item.rating} ⭐ | ${item.reviews}</div>
         <div class="des">
           <span>${item.brand}</span>
@@ -97,48 +81,40 @@ function displayItemsOnHomePage() {
       </div>`;
   });
   itemsContainerElement.innerHTML = innerHTML;
-};
+}
 
 function popupContent() {
-  const productPopup = document.getElementById("product-popup");
-  const productItemsContainer = document.querySelector(".pro-container"); // Parent container
+  const productItems = document.querySelectorAll(".pro");
 
-  if (!productItemsContainer) return;
+  const popup = document.getElementById("product-popup");
+  const closePopup = document.getElementById("close-popup");
+  const popupImage = document.getElementById("popup-image");
+  const popupName = document.getElementById("popup-name");
+  const popupDescription = document.getElementById("popup-description");
+  const popupPrice = document.getElementById("popup-price");
 
-  productItemsContainer.addEventListener("click", (event) => {
-    const proitem = event.target.closest(".imageContainer"); // Find closest image container
-
-    if (proitem) {
+  productItems.forEach((proitem) => {
+    proitem.addEventListener("click", () => {
       const productId = proitem.getAttribute("data-id");
       const product = items.find((p) => p.id == productId);
 
       if (product) {
-        const store = `<div class="popup-content">
-            <span style="float: right;" id="close-popup" class="close-btn">&times;</span>
-            <div style="width: 100%; padding: 1rem; margin-left: 6rem;" id="product-details">
-              <img style="border-radius: 8px;" width="70%" id="popup-image" src="${product.image}" alt="Product Image" />
-              <h3 id="popup-name">${product.productName}</h3>
-              <p id="popup-description">${product.rating}</p>
-              <p id="popup-price">₹${product.current_price}</p>
-              <div class="buttons">
-                <button class="addCart">Buy Now</button>
-                <button class="addCart" onclick="addToBag(${product.id})">Add to Cart</button>
-              </div>
-            </div>
-          </div>`;
+        popupImage.src = product.image;
+        popupName.textContent = product.productName;
+        popupDescription.textContent = product.reviews;
+        popupPrice.textContent = product.current_price;
 
-        productPopup.innerHTML = store;
-        productPopup.classList.remove("hidden");
-
-        const closePopup = document.getElementById("close-popup");
-        closePopup.addEventListener("click", () => {
-          productPopup.classList.add("hidden");
-        });
+     
+        popup.classList.remove("hidden");
       }
-    }
+    });
   });
-};
 
+
+  closePopup.addEventListener("click", () => {
+    popup.classList.add("hidden");
+  });
+}
 
 function addToBag(itemId) {
   bagItems.push(itemId);
@@ -160,10 +136,4 @@ function displayBagIcon() {
       bagItemCountElement.style.visibility = "hidden";
     }
   }
-};
-
-function displayBagIcon() {
-  const bagCountElement = document.querySelector('.cart_count');
-  const itemCount = bagItems.length;
-  bagCountElement.textContent = itemCount > 0 ? itemCount : '';
 }
