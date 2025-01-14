@@ -14,27 +14,22 @@
 }
 
 #cart table td:nth-child(1){
-  width: 100px;
   text-align: center;
 }
 #cart table td:nth-child(2){
-  width: 150px;
   text-align: center;
 }
 #cart table td:nth-child(3){
-  width: 250px;
   text-align: center;
 }
 
 #cart table td:nth-child(4)
 #cart table td:nth-child(5)
 #cart table td:nth-child(6){
-  width: 150px;
   text-align: center;
 }
 
 #cart table td:nth-child(5) input{
-  width: 70px;
   padding: 10px 5px 10px 15px;
 }
 
@@ -105,7 +100,11 @@
   bottom: 1px solid #e2e9e1;
   padding: 10px;
   font-size: 13px;
+}
 
+.product-details{
+  margin-top: 3rem;
+  text-align: center;
 }
 
 @media screen and (max-width: 799px){

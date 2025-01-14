@@ -11,15 +11,14 @@ async function fetchItems() {
 function initializeBagItems(){
 let bagItemsStr = localStorage.getItem('bagItems');
 bagItems = bagItemsStr ? JSON.parse(bagItemsStr) : [];
-console.log("Bag Items from localstorage:", bagItems);
 }
 
 function onLoad() {
     initializeBagItems();
-    fetchItems().then (() => { 
-    loadBagItemObjects();
-    displayBagItems();
-  })
+    // fetchItems().then (() => { 
+        loadBagItemObjects();
+        displayBagItems();
+//   })
 }
 
 onLoad();
@@ -36,7 +35,6 @@ function loadBagItemObjects() {
     bagItemObjects = bagItems.map(itemId => {
         return items.find(item => item.id === itemId);
     });
-    console.log("Bag Item Objects", bagItemObjects);
 }
 
 function displayBagItems() {
@@ -53,17 +51,14 @@ function displayBagItems() {
         });
       }
 
-
     containerElement.innerHTML = innerHTML;
 }
 
 function generateItemHTML(item) {
-    console.log(item.image);
     return `<tr>
             <td><img src="${item.image}" alt="${item.productName}" /></td>
             <td>${item.productName}</td>
             <td>₹${item.current_price}</td>
-            <td><input type="number" value="1" /></td>
             <td>
                 <div class="remove-from-cart" onclick="removeFromBag(${item.id})">
                     <i class="far fa-times-circle"></i>

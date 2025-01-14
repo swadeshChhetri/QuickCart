@@ -33,15 +33,19 @@ function mobileMenu() {
   const openButton = document.getElementById("open-sidebar-button");
   const navbar = document.getElementById("navbar");
   const closed = document.getElementById("close-sidebar-button");
+  
+  if (openButton && navbar && closed) {
+    openButton.addEventListener("click", () => {
+      navbar.classList.add("show");
+    });
 
-  openButton.addEventListener("click", () => {
-    navbar.classList.add("show");
-  });
-
-  closed.addEventListener("click", () => {
-    navbar.classList.remove("show");
-  });
-};
+    closed.addEventListener("click", () => {
+      navbar.classList.remove("show");
+    });
+  } else {
+    console.warn("Sidebar menu elements are missing on this page.");
+  }
+}
 
 function search() {
   document.getElementById("search").addEventListener("click", () => {
