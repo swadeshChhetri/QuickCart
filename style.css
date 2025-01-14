@@ -56,6 +56,10 @@ ul li {
   display: inline-block;
 }
 
+.slide-container {
+  margin-top: 77px;
+}
+
 .popup1 {
   display: none;
   position: absolute;
@@ -93,7 +97,6 @@ ul li {
   display: none;
   background: none;
   border: none;
-  padding: 1em;
   margin-left: auto;
   cursor: pointer;
 }
@@ -113,9 +116,8 @@ ul li {
 }
 
 /* Search */
-.search_bar input {
+.searchBar input {
   border: none;
-  width: 70%;
   background: transparent;
   padding: 10px 2%;
 }
@@ -159,6 +161,13 @@ ul li {
   animation: shake 0.5s ease-in-out;
 }
 
+.cart-container{
+  display: flex; 
+  gap: 3rem; 
+  width: 15%; 
+  align-items: center;
+}
+
 .cart_container a {
   position: relative;
 }
@@ -181,11 +190,15 @@ ul li {
 }
 
 /* Navbar */
-.search_bar {
+.searchBar_Container {
   border: 2px solid #cce7d0;
   width: 50%;
   border-radius: 1.2rem;
   background: white;
+}
+
+.searchBar{
+  padding: 2px 15%;
 }
 
 /* feature-section */
@@ -386,7 +399,6 @@ ul li {
   padding: 0 1.25em;
   font-size: 14px;
   width: 100%;
-  border: 1px solid transparent;
   border-radius: 4px;
   outline: none;
   border-top-right-radius: 0;
@@ -485,4 +497,87 @@ footer .copyright {
     right: 0;
     z-index: 999;
   }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 0;
+    position: relative;
+  }
+  .img_container {
+    width: 29%;
+  }
+  .searchBar_Container {
+    width: 74%;
+  }
+  .dropdown {
+    display: none;
+  }
+
+  .searchBar {
+    padding: 2px 11%;
+}
+
+.img_container {
+  width: 18%;
+}
+.image {
+  width: 76%;
+}
+.cart-container {
+  margin-left: 14px;
+  width: 9%;
+  align-items: center;
+}
+
+.slide-container {
+  margin-top: 0;
+  height: 168px !important;
+}
+.section-p1 {
+  padding: 53px 7px;
+}
+
+#feature {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+
+#feature .fe-box {
+  padding: 25px 15px;
+  text-align: center;
+  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.3);
+  border: 1px solid #cce7d0;
+  border-radius: 4px;
+}
+
+.pro {
+  width: 36%;
+  margin: 2rem 18%;
+}
+
+#newsletter {
+  display: block;
+  align-items: center;
+  background-color: #041e42;
+}
+
+#newsletter .form {
+  margin-top: 1rem;
+  display: flex;
+  width: 100%;
+}
+#newsletter button {
+  width: 75px;
+}
+footer {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 0 7%;
+}
+
 }

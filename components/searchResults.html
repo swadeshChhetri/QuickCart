@@ -1,30 +1,32 @@
 <!-- searchResults.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <base href="/QuickCart/">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-/>
-</head>
-<body>
-  <header id="header"></header>
-  <section class="product1 section-p1" >
-    <div id="products" class="items pro-container"></div>
-  </section>
-  <footer id="footer"></footer>
-<script>
-const filteredProducts = JSON.parse(localStorage.getItem("filteredProducts"));
-const displayProducts = (products) => {
-  const productsContainer = document.getElementById("products");
-  let innerHTML = "";
-  products.forEach((item) => {
-    innerHTML += `   
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header id="header"></header>
+    <section class="product1 section-p1">
+      <div id="products" class="items pro-container"></div>
+    </section>
+    <footer id="footer"></footer>
+    <script>
+      const filteredProducts = JSON.parse(
+        localStorage.getItem("filteredProducts")
+      );
+      const displayProducts = (products) => {
+        const productsContainer = document.getElementById("products");
+        let innerHTML = "";
+        products.forEach((item) => {
+          innerHTML += `   
         <div class='pro'>
         <img src="${item.image}" alt="${item.productName}" />
         <div>4.6 ⭐ | 1308</div>
@@ -41,17 +43,16 @@ const displayProducts = (products) => {
           <button class="addCart" onclick="addToBag(${item.id})">Add to Cart</button>
         </div>
       </div>`;
-  });
-  productsContainer.innerHTML = innerHTML;
-  };
+        });
+        productsContainer.innerHTML = innerHTML;
+      };
 
-if (filteredProducts && filteredProducts.length > 0) {
-  displayProducts(filteredProducts);
-} else {
-  document.getElementById("products").innerText = "No products found";
-}
-
-</script>
-<script src="script.js"></script>
-</body>
+      if (filteredProducts && filteredProducts.length > 0) {
+        displayProducts(filteredProducts);
+      } else {
+        document.getElementById("products").innerText = "No products found";
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
 </html>
