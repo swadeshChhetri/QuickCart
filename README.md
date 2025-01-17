@@ -4,51 +4,22 @@ This repository contains QuickCart, an E-Commerce platform offering a wide range
 
 ## Features
 
-### User Authentication:
-- Secure user login and registration system.
-- Password recovery option.
-
 ### Product Management:
 - Organized product catalog with categories (e.g., Fashion, Electronics).
 - Product search and filtering functionality.
 
 ### Shopping Cart:
-- Add, update, or remove items from the cart.
-- Display total price and quantity dynamically.
-
-### Order Management:
-- View order summary and track order status.
-- Secure checkout process.
-
-### Payment Integration:
-- Support for multiple payment gateways (e.g., credit card, digital wallets).
-
-### Admin Dashboard:
-- Manage products, categories, and user data.
-- View sales analytics and reports.
+- Add or remove items from the cart.
 
 ## Technology Stack
 
 ### Frontend:
-- HTML, CSS, JavaScript, Bootstrap
-
-### Backend:
-- PHP (Server-side logic)
-
-### Database:
-- MySQL (Data storage and management)
+- HTML, CSS, JavaScript
 
 ## System Design
 
 ### Architecture
-- **Client-Server Architecture**: Frontend and backend communicate via RESTful APIs.
-
-### Database Schema
-- **users**: Stores user information such as email, password, and profile details.
-- **products**: Contains details of items including name, category, price, and stock.
-- **categories**: Lists product categories (e.g., Fashion, Electronics).
-- **orders**: Records order details such as user ID, product IDs, total amount, and status.
-- **order_items**: Tracks individual items within each order.
+- **Client-Server Architecture**: Frontend and dummy json data communicate via RESTful APIs.
 
 ## Development Process
 
